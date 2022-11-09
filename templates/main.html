@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<div class="bg-dark text-secondary px-4 py-5 text-center vh-100 d-flex justify-content-center flex-column">
+    <div class="py-5">
+        <img class="d-block mx-auto mb-4" src="\static\material\1_Riqqoa7vKHXnFHvaGfDFjA.png" alt="" width="300" height="150">
+      <h1 class="display-5 fw-bold text-white">Определить цифру</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">Поместите изображение с цифрой</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <form method="post" enctype="multipart/form-data">
+            <div class="input-group mb-3">
+              <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
+              <input type="file" name="file" class="form-control" id="inputGroupFile01">
+              <button type="submit" value=" Send" class="btn btn-success" id="submit">
+          </form>
+          </div>
+        </div>
+        {% for msg in get_flashed_messages()  %}
+        <div class="flash" >{{msg}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
